@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adaptive Roundabout Simulation</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="canvas-wrapper">
+        <canvas id="roundabout-canvas" width="1200" height="900"></canvas>
+      </section>
+      <section class="sidebar">
+        <h1>Roundabout Traffic Simulation</h1>
+        <p>
+          The visualization below renders an adaptive five-arm roundabout. Vehicles
+          are generated randomly, interact with sensor zones, and respond to
+          signal states produced by the controller.
+        </p>
+        <div class="status-card">
+          <h2>Sensor States</h2>
+          <ul id="sensor-readout" class="readout"></ul>
+        </div>
+        <div class="status-card">
+          <h2>Signal States</h2>
+          <ul id="signal-readout" class="readout"></ul>
+        </div>
+        <div class="status-card">
+          <h2>Simulation Controls</h2>
+          <label class="control">
+            <span>Vehicle Spawn Rate</span>
+            <input type="range" id="spawn-rate" min="0" max="1" step="0.05" value="0.4" />
+          </label>
+          <button id="toggle-sim">Pause</button>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./assets/main.js"></script>
+  </body>
+</html>

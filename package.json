@@ -1,0 +1,22 @@
+{
+  "name": "roundabout_sim",
+  "version": "1.0.0",
+  "description": "Adaptive five-arm roundabout traffic simulation",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "npx serve public"
+  },
+  "keywords": [
+    "roundabout",
+    "traffic",
+    "simulation",
+    "typescript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

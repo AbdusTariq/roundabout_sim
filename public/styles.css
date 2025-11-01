@@ -1,0 +1,136 @@
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #17191f;
+  color: #f0f3ff;
+  --card-bg: rgba(34, 38, 48, 0.9);
+  --accent: #33a7ff;
+  --danger: #ff5959;
+  --success: #5cff88;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  height: 100vh;
+}
+
+.canvas-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: radial-gradient(circle at center, #2b2f3a 0%, #101218 100%);
+}
+
+#roundabout-canvas {
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  max-height: 900px;
+  border-radius: 18px;
+  background: #11131a;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar {
+  padding: 1.5rem;
+  overflow-y: auto;
+  background: linear-gradient(180deg, rgba(20, 23, 32, 0.95) 0%, rgba(12, 14, 19, 0.95) 100%);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebar h1 {
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.status-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.35);
+}
+
+.status-card h2 {
+  font-size: 1.2rem;
+  margin: 0 0 0.75rem;
+}
+
+.readout {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.readout li {
+  background: rgba(12, 14, 19, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.75rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.readout li .badge {
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+.badge.active {
+  background: rgba(92, 255, 136, 0.2);
+  color: var(--success);
+}
+
+.badge.inactive {
+  background: rgba(255, 89, 89, 0.2);
+  color: var(--danger);
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+#toggle-sim {
+  background: var(--accent);
+  color: #0b101a;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+#toggle-sim:hover {
+  background: #2c90dc;
+}
+
+@media (max-width: 1200px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .sidebar {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}
